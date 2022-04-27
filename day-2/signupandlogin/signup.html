@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+
+img{
+         display: flex;
+         margin: auto;
+         
+     }
+          input{
+        width: 490px;
+        height: 40px;
+        font-size: larger;
+        margin-top: 0%;
+        border-radius: 5px;
+        border: 1px gray solid;
+        
+        
+    }
+    h4{ 
+  color: grey;
+ margin-bottom: 4px;
+
+
+    }
+    h2{
+    text-align: center;
+    }
+    #container1{
+         border: 1px gray solid;
+        width: 500px;
+        height: 700px;
+        padding: 10px;
+        margin: auto;
+    
+
+     }
+     h5{
+         color: gray;
+     }
+     #signup{
+        margin-top: 20px;
+        background-color: lavender;
+        height: 40px;
+        border: none;
+        color: gray;
+    }
+    </style>
+</head>
+<body>
+    <form id="container1">
+    <img src="https://sso.masaischool.com/brand_dark.svg"/>
+    <h2>Sign Up</h2>
+    <h4>Full name</h4>
+
+        <input type="text" placeholder="Enter Your full name"/>
+     
+    
+    <h4>Email</h4>
+        <input type="email" id="email1" placeholder="Enter email"/>
+     
+    
+    <h4>password</h4>
+        <input type="password" id="password1" placeholder="Enter password"/>
+     
+    <h5>By signing up, I accept the Masai School 
+        <a href="https://masaischool.com/terms/">Terms of Service</a>
+        and acknowledge the 
+        <a href="https://masaischool.com/privacy/">Privacy Policy</a>
+    </h5>
+     
+     <input type="submit" id="signup" value="SIGN UP">
+</form>
+</body>
+</html>
+
+<script>
+var serveremail=JSON.parse(localStorage.getItem("email"))
+console.log(serveremail)
+var serverpassword=JSON.parse(localStorage.getItem("password"))
+console.log(serverpassword)
+
+document.querySelector("form").addEventListener("submit",signupfun)
+
+function signupfun(){
+ event.preventDefault()
+var inputemail=document.querySelector("#email1").value
+var inputpassword=document.querySelector("#password1").value
+
+if(inputemail==serveremail){
+    if(inputpassword==serverpassword){
+
+        alert("login successfully")
+    }
+    else if(inputpassword!=serverpassword){
+      alert("Wrong password Try again or click Forgot password to reset it.")
+    }
+
+}
+else{
+    alert("email id invalid")
+}
+
+
+}
+
+</script>

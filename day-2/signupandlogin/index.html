@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+ <style>
+     img{
+         display: flex;
+         margin: auto;
+         
+     }
+
+     #container{
+         border: 1px gray solid;
+        width: 500px;
+        height: 700px;
+        padding: 10px;
+        margin: auto;
+
+     }
+     h2{
+        text-align: center;
+
+     }
+
+    input{
+        width: 490px;
+        height: 40px;
+        font-size: larger;
+        margin-top: 0%;
+        border-radius: 5px;
+        border: 1px gray solid;
+        
+        
+    }
+
+      
+
+    #container>h4{
+        color: grey;
+        margin-bottom: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #signin{
+        margin-top: 20px;
+        background-color: lavender;
+        height: 40px;
+        border: none;
+    }
+
+
+#detail{
+    text-align: center;
+}
+
+ </style>
+</head>
+<body>
+    
+    <form id="container">
+        <img src="https://sso.masaischool.com/brand_dark.svg"/>
+        <h2>Sign in</h2>
+        
+        
+        <h4>Email</h4>
+            <input type="email" id="email" placeholder="Enter email"/>
+         
+        
+        <h4>password</h4>
+            <input type="password" id="password" placeholder="Enter password"/>
+         
+        <h5 id="detail">Don't have an account?<a href="signup.html">Sign Up </a>
+        </h5>
+         
+        
+         <input type="submit" id="signin" value="SIGN IN">
+    </form>
+</body>
+</html>
+
+
+
+<script>
+document.querySelector("form").addEventListener("submit",myfunction)
+
+function myfunction(){
+    event.preventDefault()
+var email=document.querySelector("#email").value
+localStorage.setItem("email",JSON.stringify(email))
+
+
+var password=document.querySelector("#password").value
+localStorage.setItem("password",JSON.stringify(password))
+
+
+alert("sign in successfully")
+
+}
+
+
+
+
+
+
+
+
+</script>
